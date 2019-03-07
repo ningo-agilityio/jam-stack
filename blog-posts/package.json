@@ -19,6 +19,9 @@
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
+    "dotenv": "^6.2.0",
+    "gatsby-source-contentful": "^2.0.35",
+    "materialize-css": "^1.0.0-rc.2",
     "prettier": "^1.16.4"
   },
   "keywords": [
