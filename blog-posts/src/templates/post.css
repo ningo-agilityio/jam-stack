@@ -1,0 +1,20 @@
+.post-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-info img {
+  width: 80px;
+  height: 80px;
+}
+
+.post-content {
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  line-height: 26px;
+}
+
+.clearfix {
+  clear: both;
+}

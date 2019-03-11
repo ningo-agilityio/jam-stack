@@ -18,6 +18,13 @@ const query = graphql`
           author {
             name
           }
+          slug
+          thumbnail {
+            id
+            file {
+              url
+            }
+          }
         }
       }
     }
@@ -30,25 +37,46 @@ const IndexPage = () => (
     <StaticQuery 
       query={query}
       render={(data) => {
+        console.log(data.allContentfulPost.edges)
         return (
-          <table>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Author</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                data.allContentfulPost.edges.map((post) => (
-                  <tr key={post.node.id}>
-                    <td>{post.node.title}</td>
-                    <td>{post.node.author.name}</td>
-                  </tr>
-                ))
-              }
-            </tbody>
-          </table>
+          <div className="row">
+            {
+              data.allContentfulPost.edges.map((post, index) => (
+                <>
+                  <div 
+                    className="col s12 m4" 
+                    key={post.node.id} 
+                    style={{ 
+                      height: '100%', 
+                      maxHeight: '300px',
+                      marginBottom: '50px'
+                    }}
+                  >
+                    <a href={`/${post.node.slug}`} style={{ display: 'block' }}>
+                      <div className="card">
+                        <div className="card-image" style={{ height: '190px' }}>
+                          <img 
+                            src={post.node.thumbnail.file.url} 
+                            alt={'Thumbnail'} 
+                            style={{ height: '100%', objectFit: 'cover' }}
+                          />
+                        </div>
+                        <div className="card-content">
+                          <h4 className="card-title truncate">{post.node.title}</h4>
+                          <p className="truncate">{post.node.author.name}</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  {
+                    (index + 1) % 3 === 0 &&
+                    <div style={{ clear: 'both' }}></div>
+                  }
+                </>
+              ))
+            }
+            {/* <div style={{ clear: 'both' }}></div> */}
+          </div>
         )
       }}
     />
