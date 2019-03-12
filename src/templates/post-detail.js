@@ -11,7 +11,7 @@ const PostDetail = (props) => {
     content,
     gallery
   } = props.data.contentfulPost
-  console.log(gallery)
+
   return (
     <div className="container">
       <h1>{title}</h1>

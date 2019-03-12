@@ -37,7 +37,6 @@ const IndexPage = () => (
     <StaticQuery 
       query={query}
       render={(data) => {
-        console.log(data.allContentfulPost.edges)
         return (
           <div className="row">
             {
