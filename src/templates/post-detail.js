@@ -1,6 +1,8 @@
-/*global graphql*/
 import React, { Fragment } from 'react'
 import { Link } from "gatsby"
+import Img from 'gatsby-image'
+import { graphql } from 'gatsby'
+
 import './post.css'
 
 const PostDetail = (props) => {
@@ -17,10 +19,12 @@ const PostDetail = (props) => {
       <h1>{title}</h1>
       <div className="post-info">
         <h5>Author by: {author.name}</h5>
-        <img src={author.avatar.file.url} />
+        <Img sizes={author.avatar.sizes} />
+        {/* <img src={author.avatar.url} /> */}
       </div>
 
-      <img src={thumbnail.file.url} />
+      {/* <img src={thumbnail.sizes} /> */}
+      <Img sizes={thumbnail.sizes} style={{ height: '100%', objectFit: 'cover' }} />
 
       <div className="post-content">
         {content.content}
@@ -35,11 +39,12 @@ const PostDetail = (props) => {
                 <div className="col s12 m4">
                   <div className="card">
                     <div className="card-image" style={{ height: '190px' }}>
-                      <img 
-                        src={item.file.url}
+                      <Img sizes={item.sizes} style={{ height: '100%', objectFit: 'cover' }} />
+                      {/* <img 
+                        src={item.url}
                         alt={'Thumbnail'} 
-                        style={{ height: '100%', objectFit: 'cover' }}
-                      />
+                        
+                      /> */}
                     </div>
                     <div className="card-content">
                       <h4 className="card-title truncate">{item.description}</h4>
@@ -75,8 +80,8 @@ export const pageQuery = graphql`
       createdDate
       thumbnail {
         id
-        file {
-          url
+        sizes(maxWidth: 800, quality: 80) {
+          ...GatsbyContentfulSizes
         }
       }
       author {
@@ -84,8 +89,8 @@ export const pageQuery = graphql`
         name
         avatar {
           id
-          file {
-            url
+          sizes(maxWidth: 800, quality: 80) {
+            ...GatsbyContentfulSizes
           }
         }
       }
@@ -93,8 +98,8 @@ export const pageQuery = graphql`
       gallery {
         id
         description
-        file {
-          url
+        sizes(maxWidth: 800, quality: 80) {
+          ...GatsbyContentfulSizes
         }
       }
     }

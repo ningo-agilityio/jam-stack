@@ -3,6 +3,7 @@ import { Link, StaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Img from 'gatsby-image'
 
 const query = graphql`
   query ListPosts {
@@ -21,8 +22,8 @@ const query = graphql`
           slug
           thumbnail {
             id
-            file {
-              url
+            sizes(maxWidth: 800, quality: 80) {
+              ...GatsbyContentfulSizes
             }
           }
         }
@@ -54,11 +55,7 @@ const IndexPage = () => (
                     <a href={`/${post.node.slug}`} style={{ display: 'block' }}>
                       <div className="card">
                         <div className="card-image" style={{ height: '190px' }}>
-                          <img 
-                            src={post.node.thumbnail.file.url} 
-                            alt={'Thumbnail'} 
-                            style={{ height: '100%', objectFit: 'cover' }}
-                          />
+                          <Img sizes={post.node.thumbnail.sizes} style={{ height: '100%', objectFit: 'cover' }} />
                         </div>
                         <div className="card-content">
                           <h4 className="card-title truncate">{post.node.title}</h4>
@@ -74,7 +71,6 @@ const IndexPage = () => (
                 </>
               ))
             }
-            {/* <div style={{ clear: 'both' }}></div> */}
           </div>
         )
       }}
