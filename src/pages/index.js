@@ -23,7 +23,7 @@ const query = graphql`
           thumbnail {
             id
             sizes(maxWidth: 800, quality: 80) {
-              ...GatsbyContentfulSizes
+              ...GatsbyContentfulSizes_withWebp
             }
           }
         }
