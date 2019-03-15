@@ -19,7 +19,9 @@
 
 
 ## HOW THEY WORK
-![How they work](https://raw.githubusercontent.com/ningo-agilityio/jam-stack/blob/master/src/images/gatsby-astronaut.png)
+
+<img style="display: block; margin: 30px auto;" alt="Flow chart" src="https://raw.githubusercontent.com/ningo-agilityio/jam-stack/master/src/images/jam-stack-works.png" width="500" />
+
 
 ## HOW TO RUN SITE
 1. Clone or download source code
