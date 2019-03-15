@@ -10,9 +10,13 @@
 
 ## TECH STACKS: 
 - Template: HTML/CSS, [React version 16](https://reactjs.org/)
-- Build tool: [Gatsby](https://www.gatsbyjs.org/) (powered by Graphql)]
-- CMS: [Contentful](https://www.contentful.com/)
-- Deploy service: [Netlify](https://www.netlify.com/)
+- [Gatsby](https://www.gatsbyjs.org/) (powered by Graphql)]: It is a React-based, GraphQL powered, static site generator, free and open source framework based on React that helps developers build blazing fast websites and apps.
+
+
+- [Contentful](https://www.contentful.com/): It is content infrastructure. It is an efficient tool for creating and managing your content online, either alone or in team.
+
+-  [Netlify](https://www.netlify.com/): It is a great hosting service ideal for static sites. It has a nice free plan, free CDN and is blazing fast.
+
 
 ## HOW THEY WORK
 ![How they work](https://raw.githubusercontent.com/ningo-agilityio/jam-stack/blob/master/src/images/gatsby-astronaut.png)
