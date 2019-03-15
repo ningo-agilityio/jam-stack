@@ -5,7 +5,7 @@
   </a>
 </p>
 <h1 align="center">
-  This is a practice about Content Management with <a href="https://www.contentful.com/">Contentful</a>, <a href="https://www.gatsbyjs.org/">Gatsby</a> and <a href="https://www.netlify.com/">Netlify</a>"
+  Content Management with <a href="https://www.contentful.com/">Contentful</a>, <a href="https://www.gatsbyjs.org/">Gatsby</a> and <a href="https://www.netlify.com/">Netlify</a>
 </h1>
 
 ## TECH STACKS: 
