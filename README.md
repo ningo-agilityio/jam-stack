@@ -10,7 +10,7 @@
 
 ## TECH STACKS: 
 - Template: HTML/CSS, [React version 16](https://reactjs.org/)
-- Build tool: [Gatsby (powered by Graphql)](https://www.gatsbyjs.org/)
+- Build tool: [Gatsby](https://www.gatsbyjs.org/) (powered by Graphql)]
 - CMS: [Contentful](https://www.contentful.com/)
 - Deploy service: [Netlify](https://www.netlify.com/)
 
