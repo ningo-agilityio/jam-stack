@@ -16,7 +16,7 @@ const PostDetail = (props) => {
 
   return (
     <div className="container">
-      <h1>{title}</h1>
+      <h1 style={{ color: 'red' }}>{title}</h1>
       <div className="post-info">
         <h5>Author by: {author.name}</h5>
         <Img sizes={author.avatar.sizes} />
